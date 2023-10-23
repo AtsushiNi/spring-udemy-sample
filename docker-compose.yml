@@ -1,0 +1,12 @@
+services:
+  spring-server:
+    platform: linux/x86_64
+    image: openjdk:14
+    container_name: spring-server
+    tty: true
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - 8080:8080
+    command: ./gradlew bootRun
